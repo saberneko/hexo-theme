@@ -1,0 +1,88 @@
+.archives-wrap
+  margin: block-margin 0
+  @media mq-normal
+    margin-left: 50px
+    margin-right: 60px
+
+.archives
+  clearfix()
+
+.archive-year-wrap
+  margin: 0 10px 15px
+  font-size: 1.8em
+  a
+    color: #777
+
+.archive-year
+  @extend $block-caption
+
+.archives
+  column-gap: 10px
+  @media mq-tablet
+    column-count: 1
+  @media mq-normal
+    column-count: 1
+
+.archive-article
+  avoid-column-break()
+
+.archive-article-inner
+  @extend $block
+  padding: 10px
+
+.archive-article-title
+  text-decoration: none
+  font-weight: 300
+  color: #777
+  transition: color 0.2s
+  line-height: line-height
+  font-size: 1.1em
+  &:hover
+    color: color-link
+
+.archive-article-footer
+  margin-top: 1em
+
+.archive-article-date
+  color: color-grey
+  text-decoration: none
+  font-size: 1.1em
+  font-weight: font-weight
+  line-height: line-height
+  margin-top: 3px
+  display: block
+  float: right
+  
+
+#page-nav
+  clearfix()
+  margin: block-margin auto
+  background: #fff
+  text-align: center
+  font-weight: font-weight
+  color: color-grey
+  overflow: hidden
+  a, span
+    padding: 10px 20px
+    line-height: 1
+    height: 2ex
+  a
+    color: color-grey
+    text-decoration: none
+    transition: all 200ms ease-in
+    &:hover
+      background: color-link
+      color: #fff
+  .prev
+    float: left
+  .next
+    float: right
+  .page-number
+    display: inline-block
+    @media mq-mobile
+      display: none
+  .current
+    color: color-default
+    font-weight: bold
+  .space
+    color: color-border

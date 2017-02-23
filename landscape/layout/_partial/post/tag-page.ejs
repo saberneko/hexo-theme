@@ -1,0 +1,24 @@
+<% function NewObject(posts){ %>
+	<% var newObj = {};%>
+	<% posts.forEach(function(post){ %>
+		<% post.tags.forEach(function(tag){ %>
+			<% if(!newObj.hasOwnProperty(tag.name)){ %>
+				<% newObj[tag.name] = new Array(); %>
+				<% newObj[tag.name].push({title: post.title, path: post.path});%>
+			<% }else{ %>
+				<% newObj[tag.name].push({title: post.title, path: post.path});%>
+			<%}%>
+		<%});%>
+	<%});%>
+	<%return newObj;%>
+<%}%>
+<% var newobj = new NewObject(site.posts)%>
+
+<div class="tag-wrapper">
+	<% for(key in newobj){ %>
+	<div><%= key%></div>
+	<% newobj[key].forEach(function(obj){%>
+		<p><%= obj.title%> + '/' + <%= obj.path%><p>	
+	<% })%>
+</div>
+<%}%>

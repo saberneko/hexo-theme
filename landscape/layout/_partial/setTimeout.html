@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log('start');
+
+		setTimeout(() => {
+			console.log('hello');
+		}, 200);
+
+		setTimeout(() => {
+			console.log('world');
+		}, 300);
+
+		for(var i = 0;i < 1000; i++){
+			console.log(i);
+		}
+
+		setTimeout(() => {
+			console.log('i am run');
+		}, 100);
+
+		console.log('end');
+	</script>
+</body>
+</html>
